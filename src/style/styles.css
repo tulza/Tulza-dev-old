@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  @apply bg-background h-[100vh] flex justify-center items-center;
+}
+
+.radical-limination-circle {
+  background: radial-gradient(
+    circle at center,
+    hsla(263, 45%, 35%, 30%) 0%,
+    hsla(273, 44%, 50%, 0%) 70%
+  );
+}
