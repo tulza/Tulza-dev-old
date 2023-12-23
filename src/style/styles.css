@@ -1,8 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-#root {
+:root {
+  --text: #0b1508;
+  --background: #fafdf9;
+  --primary: #69bd50;
+  --secondary: #496241;
+  --accent: #6f9f74;
+}
+#html {
   @apply bg-background h-[100vh] flex justify-center items-center;
 }
 
