@@ -1,5 +1,5 @@
 import React from "react";
-import { blob } from "../svg/ImageImport.jsx";
+import { blob, itemFrame } from "../svg/ImageImport.jsx";
 import { easeIn, motion } from "framer-motion";
 import clsx from "clsx";
 import Section from "../Section.jsx";
@@ -125,6 +125,7 @@ const Introduction = () => {
               </motion.div>
             </motion.div>
           </div>
+          {/* Small text */}
           <div className="flex text-2xl">
             <AnimatedText
               className="text-2xl"
@@ -133,16 +134,21 @@ const Introduction = () => {
               stagger={0.025}
               delay={1}
             />
+            {/* slide in out text */}
             <motion.span
               className="flex items-end"
-              initial={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2 }}
             >
               <SlideInOutText />
             </motion.span>
           </div>
-          <div className="absolute left-0 w-[100vw] outline"></div>
+          <div className="relative flex">
+            <img src={itemFrame} className="absolute w-[200px]" />
+            <img src={itemFrame} className="absolute w-[200px]" />
+          </div>
+          {/* <div className="absolute left-0 w-[100vw] outline"></div> */}
         </div>
       </div>
     </Section>

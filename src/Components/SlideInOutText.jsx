@@ -11,7 +11,7 @@ const SlideInOutText = () => {
 
   const [text, setText] = useState(["React", "React"]);
   return (
-    <div className="border border-yellow">
+    <div>
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ y: "-60%", opacity: 0 }}
