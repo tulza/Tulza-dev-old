@@ -2,20 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  --text: #0b1508;
-  --background: #fafdf9;
-  --primary: #69bd50;
-  --secondary: #496241;
-  --accent: #6f9f74;
+  --black: #1c1e1f;
+  --blue: #54a6c9;
+  --green: #79c954;
+  --purple: #9554c9;
+  --red: #c95454;
+  --yellow: #c9af54;
+  --white: #ffffff;
 }
-#html {
-  @apply bg-background h-[100vh] flex justify-center items-center;
-}
-
-.radical-limination-circle {
-  background: radial-gradient(
-    circle at center,
-    hsla(263, 45%, 35%, 30%) 0%,
-    hsla(273, 44%, 50%, 0%) 70%
-  );
+html {
+  background-color: var(--black);
 }
