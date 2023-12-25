@@ -81,6 +81,7 @@ const CircleLine = () => {
         )}
         whileHover={{ backgroundColor: fill }}
         transition={{ duration: 0.05 }}
+        onTransitionEnd={{ duration: 1 }}
       />
     );
   };
@@ -137,7 +138,7 @@ const Introduction = () => {
     hidden: { x: 20, opacity: 0 },
   };
   return (
-    <div className="relative flex h-[100vh] w-full flex-col">
+    <Section>
       {/* Header */}
       <div>
         <Blobs />
@@ -181,9 +182,10 @@ const Introduction = () => {
             stagger={0.025}
             delay={1}
           />
+          <div className="absolute left-0 w-[100vw] outline"></div>
         </div>
       </div>
-    </div>
+    </Section>
   );
 };
 
