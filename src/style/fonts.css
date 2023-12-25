@@ -2,3 +2,7 @@
   color: var(--white);
   font-family: "Space Mono", monospace;
 }
+
+.white-stroke {
+  -webkit-text-stroke: 1px var(--white);
+}
