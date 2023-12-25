@@ -25,13 +25,13 @@ const A = () => {
 
 const Blobs = () => {
   const rotate = 360;
-  const initial = [0, 90, 180];
+  const initial = [30, 90, 180];
   const transition = "-45%";
   return (
     <>
       <div className="pointer-events-none">
         <motion.img
-          className="absolute left-0 top-0 w-[500px]"
+          className="absolute left-0 top-0 w-[450px]"
           src={blob}
           alt="spinning blob"
           initial={{
@@ -43,7 +43,7 @@ const Blobs = () => {
           transition={{ ease: "linear", duration: 11, repeat: Infinity }}
         />
         <motion.img
-          className="absolute left-0 top-0 w-[500px]"
+          className="absolute left-0 top-0 w-[475px]"
           src={blob}
           alt="spinning blob"
           initial={{
@@ -145,7 +145,7 @@ const Introduction = () => {
         <Navigation />
       </div>
       {/* centre */}
-      <div className=" flex h-full items-center justify-center">
+      <div className=" pointer-events-none flex h-full items-center justify-center">
         {/* Text */}
         <div>
           {/* big text */}
@@ -157,7 +157,7 @@ const Introduction = () => {
               variants={animation}
               stagger={0.05}
             />
-            <motion.div whileHover="hovered">
+            <motion.div whileHover="hovered" className="pointer-events-auto">
               <AnimatedText
                 text="Tulza"
                 className="absolute right-1 top-1 z-10 cursor-pointer text-[100px]"
