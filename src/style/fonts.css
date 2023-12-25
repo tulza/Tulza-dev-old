@@ -1,7 +1,7 @@
 * {
   color: var(--white);
   font-family: "Space Mono", monospace;
-  @apply outline outline-1;
+  /* @apply outline outline-1; */
 }
 
 .white-stroke {

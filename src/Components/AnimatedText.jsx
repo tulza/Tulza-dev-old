@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useInView, motion } from "framer-motion";
-import React, { useRef } from "react";
+import React, { Fragment, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const AnimatedText = ({
@@ -25,8 +25,11 @@ const AnimatedText = ({
         transition={{ staggerChildren: stagger, delayChildren: delay }}
       >
         {text.split(" ").map((word, i) => {
+          {
+            /* React doesn't like fragment not having a key?*/
+          }
           return (
-            <>
+            <Fragment key={uuidv4()}>
               {[...word].map((char) => {
                 return (
                   <motion.span
@@ -44,7 +47,7 @@ const AnimatedText = ({
               ) : (
                 <span key={uuidv4()}>&nbsp;</span>
               )}
-            </>
+            </Fragment>
           );
         })}
       </motion.span>
