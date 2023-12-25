@@ -4,24 +4,9 @@ import { easeIn, motion } from "framer-motion";
 import clsx from "clsx";
 import Section from "../Section.jsx";
 import AnimatedText from "../AnimatedText.jsx";
-
-const highlightBox = {
-  hovered: { height: "25%" },
-};
-
-const A = () => {
-  return (
-    <>
-      {/* this is <a/> */}
-      <motion.span
-        className="white-stroke cursor-pointer text-3xl font-bold text-transparent"
-        whileHover={{ color: "#fff" }}
-      >
-        &lt;a/&zwnj;&gt;
-      </motion.span>
-    </>
-  );
-};
+import SlideInOutText from "../SlideInOutText.jsx";
+import NavigationBar from "../Navigation/NavigationBar.jsx";
+import { highlightBox } from "../framer-variant.js";
 
 const Blobs = () => {
   const rotate = 360;
@@ -80,8 +65,7 @@ const CircleLine = () => {
           stroke,
         )}
         whileHover={{ backgroundColor: fill }}
-        transition={{ duration: 0.05 }}
-        onTransitionEnd={{ duration: 1 }}
+        transition={{ duration: 0.05, restDelta: 1, restSpeed: 1 }}
       />
     );
   };
@@ -98,40 +82,6 @@ const CircleLine = () => {
   );
 };
 
-const Navigation = () => {
-  const Button = ({ title, highlight }) => {
-    return (
-      <>
-        <div>
-          <motion.div className="relative cursor-pointer" whileHover="hovered">
-            <span className="text-xl">{title}</span>
-            <motion.div
-              className={clsx(
-                "absolute bottom-[-0.25rem] left-[0.5rem] -z-10 h-2/3 w-full opacity-40",
-                `${highlight}`,
-              )}
-              variants={highlightBox}
-            />
-          </motion.div>
-        </div>
-      </>
-    );
-  };
-  return (
-    <>
-      <div className="flex justify-between p-4">
-        <A />
-        <div className="mr-12 flex gap-12">
-          <Button title="About me" highlight="bg-blue" />
-          <Button title="Education" highlight="bg-yellow" />
-          <Button title="Projects" highlight="bg-green" />
-          <Button title="Resume" highlight="bg-purple" />
-        </div>
-      </div>
-    </>
-  );
-};
-
 const Introduction = () => {
   const animation = {
     visible: { x: 0, opacity: 1 },
@@ -143,10 +93,10 @@ const Introduction = () => {
       <div>
         <Blobs />
         <CircleLine />
-        <Navigation />
+        <NavigationBar />
       </div>
       {/* centre */}
-      <div className=" pointer-events-none flex h-full items-center justify-center">
+      <div className=" flex h-full items-center justify-center">
         {/* Text */}
         <div>
           {/* big text */}
@@ -175,13 +125,23 @@ const Introduction = () => {
               </motion.div>
             </motion.div>
           </div>
-          <AnimatedText
-            className="text-2xl"
-            text="Passionate in UX/UI Design working with"
-            variants={animation}
-            stagger={0.025}
-            delay={1}
-          />
+          <div className="flex text-2xl">
+            <AnimatedText
+              className="text-2xl"
+              text="Passionate in UX/UI Design working with"
+              variants={animation}
+              stagger={0.025}
+              delay={1}
+            />
+            <motion.span
+              className="flex items-end"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 2 }}
+            >
+              <SlideInOutText />
+            </motion.span>
+          </div>
           <div className="absolute left-0 w-[100vw] outline"></div>
         </div>
       </div>
