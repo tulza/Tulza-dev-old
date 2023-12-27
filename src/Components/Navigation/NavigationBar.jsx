@@ -8,7 +8,7 @@ const A = () => {
     <>
       {/* this is <a/> */}
       <motion.span
-        className="white-stroke cursor-pointer text-3xl font-bold text-transparent"
+        className="white-stroke  cursor-pointer text-3xl font-bold text-transparent"
         whileHover={{ color: "#fff" }}
       >
         &lt;a/&zwnj;&gt;

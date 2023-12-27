@@ -7,6 +7,8 @@ import AnimatedText from "../AnimatedText.jsx";
 import SlideInOutText from "../SlideInOutText.jsx";
 import NavigationBar from "../Navigation/NavigationBar.jsx";
 import { highlightBox } from "../framer-variant.js";
+import IconSlide from "../IconSlide.jsx";
+import MovingIcons from "../MovingIcons.jsx";
 
 const Blobs = () => {
   const rotate = 360;
@@ -82,6 +84,12 @@ const CircleLine = () => {
   );
 };
 
+const CornerMarker = () => {
+  return (
+    <div className="absolute bottom-5 right-5 h-[80px] w-[150px] rounded-[0_0_50px_0] border-b-[10px] border-r-[10px]"></div>
+  );
+};
+
 const Introduction = () => {
   const animation = {
     visible: { x: 0, opacity: 1 },
@@ -93,6 +101,7 @@ const Introduction = () => {
       <div>
         <Blobs />
         <CircleLine />
+        <CornerMarker />
         <NavigationBar />
       </div>
       {/* centre */}
@@ -137,18 +146,11 @@ const Introduction = () => {
             {/* slide in out text */}
             <motion.span
               className="flex items-end"
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2 }}
-            >
-              <SlideInOutText />
-            </motion.span>
+            ></motion.span>
           </div>
-          <div className="relative flex">
-            <img src={itemFrame} className="absolute w-[200px]" />
-            <img src={itemFrame} className="absolute w-[200px]" />
-          </div>
-          {/* <div className="absolute left-0 w-[100vw] outline"></div> */}
         </div>
       </div>
     </Section>
