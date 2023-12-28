@@ -1,5 +1,6 @@
 import React from "react";
 import Section from "../Section";
+import ProjectBox from "../ProjectBox";
 
 const AboutMe = () => {
   return (
@@ -7,6 +8,7 @@ const AboutMe = () => {
       <div className="flex justify-end">
         <div className="m-4 text-3xl">&lt;About me/&zwnj;&gt;</div>
       </div>
+      <ProjectBox />
     </Section>
   );
 };
