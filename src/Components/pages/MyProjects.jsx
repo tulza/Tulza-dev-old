@@ -39,22 +39,20 @@ const MyProjects = () => {
             title="Web-portfolio"
             tags={[
               "React",
-              "Tailwind",
               "javascript",
-              "api",
+              "Tailwind",
               "Framer motion",
               "html/css",
-              "----",
             ]}
           />
           <ProjectBox
             title="URL-shortening-API-page"
             tags={[
               "React",
-              "Tailwind",
               "javascript",
-              "api",
+              "Tailwind",
               "responsive",
+              "api",
               "html/css",
             ]}
           />
@@ -80,7 +78,7 @@ const MyProjects = () => {
         >
           {/*4-6 projects */}
           <ProjectBox
-            title="URL-shortening-API-page"
+            title="Advice generator app"
             tags={["React", "Tailwind", "javascript", "api"]}
           />
           <ProjectBox

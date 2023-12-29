@@ -11,17 +11,16 @@ const TagBox = ({ tags }) => {
   const duration = 15;
   // get width of the tags to see if scrolling is needed
   const ref = useRef(null);
-  const [needScroll, getNeedScroll] = useState(false);
+  const [needScroll, setNeedScroll] = useState(false);
   useEffect(() => {
-    getNeedScroll(() => {
-      console.log(ref.current.offsetWidth);
+    setNeedScroll(() => {
       if (ref.current.offsetWidth > 475) {
         return true;
       }
       return false;
     });
   });
-  const visibleTags = needScroll ? [...tags, ...tags] : tags;
+  const visibleTags = needScroll ? [...tags, "//", ...tags, "//"] : tags;
   return (
     <>
       <motion.div
@@ -31,24 +30,26 @@ const TagBox = ({ tags }) => {
         animate={needScroll ? { x: "-50%" } : ""}
         transition={
           needScroll
-            ? { ease: "linear", duration: duration, repeat: Infinity }
+            ? {
+                ease: "linear",
+                duration: duration,
+                repeat: Infinity,
+              }
             : null
         }
       >
         {visibleTags.map((tag) => {
           const color = getTagColor(tag);
           return (
-            <>
-              <div
-                key={uuidv4()}
-                className={clsx(
-                  "whitespace-nowrap rounded-full p-1 px-4 outline",
-                )}
-                style={{ outlineColor: `var(--${color})` }}
-              >
-                {tag}
-              </div>
-            </>
+            <div
+              key={uuidv4()}
+              className={clsx(
+                "whitespace-nowrap rounded-full p-1 px-4 outline",
+              )}
+              style={{ outlineColor: `var(--${color})` }}
+            >
+              {tag}
+            </div>
           );
         })}
       </motion.div>
@@ -65,7 +66,9 @@ const ProjectBox = ({ title, image, tags }) => {
       className="relative flex h-[300px] w-[500px] flex-col justify-end overflow-hidden rounded-[10px] outline outline-white"
       variants={projectBoxPopUp}
     >
-      <p className="absolute top-0 m-2 rounded-full bg-black p-2">{title}</p>
+      <p className="absolute top-0 m-2 rounded-full bg-black p-2 outline">
+        {title}
+      </p>
       <img src={urlShortening} className="absolute -z-10" />
       <motion.div>
         <div className="grid h-[100px] w-[500px] grid-rows-2 items-center rounded-[10px] bg-black p-2 px-4 outline outline-white">
