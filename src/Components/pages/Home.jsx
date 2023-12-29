@@ -6,16 +6,14 @@ import Introduction from "./Introduction";
 import Section from "../Section";
 import { motion } from "framer-motion";
 import AboutMe from "./AboutMe";
-const variants = {
-  hidden: { x: 10 },
-  visible: { x: 0 },
-};
+import MyProjects from "./MyProjects";
+
 
 const Home = () => {
   return (
     <Fragment>
       <Introduction />
-      <AboutMe />
+      <MyProjects />
     </Fragment>
   );
 };

@@ -12,7 +12,7 @@ const AnimatedText = ({
   delay,
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.5 });
+  const isInView = useInView(ref, { amount: 0.2 });
   stagger = stagger ? stagger : 0.01;
   delay = delay ? delay : 0.01;
 

@@ -9,6 +9,7 @@ import NavigationBar from "../Navigation/NavigationBar.jsx";
 import { highlightBox } from "../framer-variant.js";
 import IconSlide from "../IconSlide.jsx";
 import MovingIcons from "../MovingIcons.jsx";
+import { animateChar } from "../framer-variant.js";
 
 const Blobs = () => {
   const rotate = 360;
@@ -91,10 +92,6 @@ const CornerMarker = () => {
 };
 
 const Introduction = () => {
-  const animation = {
-    visible: { x: 0, opacity: 1 },
-    hidden: { x: 20, opacity: 0 },
-  };
   return (
     <Section>
       {/* Header */}
@@ -114,14 +111,14 @@ const Introduction = () => {
               text="Hello I'm Tulza"
               className="text-[100px]"
               applyEachChar="text-transparent white-stroke"
-              variants={animation}
+              variants={animateChar}
               stagger={0.05}
             />
             <motion.div whileHover="hovered" className="pointer-events-auto">
               <AnimatedText
                 text="Tulza"
                 className="absolute right-1 top-1 z-10 cursor-pointer text-[100px]"
-                variants={animation}
+                variants={animateChar}
                 stagger={0.1}
                 delay={0.75}
               />
@@ -139,7 +136,7 @@ const Introduction = () => {
             <AnimatedText
               className="text-2xl"
               text="Passionate in UX/UI Design working with"
-              variants={animation}
+              variants={animateChar}
               stagger={0.025}
               delay={1}
             />
