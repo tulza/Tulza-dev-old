@@ -36,10 +36,13 @@ const MyProjects = () => {
         >
           <ProjectBox
             title="URL-shortening-API-page"
-            tags={["React", "Tailwind"]}
+            tags={["React", "Tailwind", "javascript", "api"]}
           />
-          <ProjectBox title="Age-calculator-app" />
-          <ProjectBox title="Stray-Artist" />
+          <ProjectBox
+            title="Age-calculator-app"
+            tags={["React", "Tailwind", "javascript"]}
+          />
+          <ProjectBox title="Stray-Artist" tags={["Unity", "C#"]} />
         </motion.div>
         <motion.div
           className="flex -translate-x-20 gap-10"

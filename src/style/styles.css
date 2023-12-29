@@ -9,8 +9,10 @@
   --red: #c95454;
   --yellow: #c9af54;
   --white: #ffffff;
+
+  --gray: #2c2e30;
+  --lightblue: #83c3df;
 }
 html {
   background-color: var(--black);
 }
-
