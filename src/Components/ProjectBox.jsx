@@ -1,10 +1,60 @@
 import { delay, easeInOut, motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { projectBoxPopUp } from "./framer-variant";
 import { getTagColor } from "../../tagsColor";
 import { v4 as uuidv4 } from "uuid";
 import clsx from "clsx";
 import { urlShortening } from "./svg/projectImage";
+import { useRef } from "react";
+
+const TagBox = ({ tags }) => {
+  const duration = 15;
+  // get width of the tags to see if scrolling is needed
+  const ref = useRef(null);
+  const [needScroll, getNeedScroll] = useState(false);
+  useEffect(() => {
+    getNeedScroll(() => {
+      console.log(ref.current.offsetWidth);
+      if (ref.current.offsetWidth > 475) {
+        return true;
+      }
+      return false;
+    });
+  });
+  const visibleTags = needScroll ? [...tags, ...tags] : tags;
+  return (
+    <>
+      <motion.div
+        // pr-4 added to the end to smoothen animation due to gap
+        className="flex gap-4 pr-4"
+        ref={ref}
+        animate={needScroll ? { x: "-50%" } : ""}
+        transition={
+          needScroll
+            ? { ease: "linear", duration: duration, repeat: Infinity }
+            : null
+        }
+      >
+        {visibleTags.map((tag) => {
+          const color = getTagColor(tag);
+          return (
+            <>
+              <div
+                key={uuidv4()}
+                className={clsx(
+                  "whitespace-nowrap rounded-full p-1 px-4 outline",
+                )}
+                style={{ outlineColor: `var(--${color})` }}
+              >
+                {tag}
+              </div>
+            </>
+          );
+        })}
+      </motion.div>
+    </>
+  );
+};
 
 const ProjectBox = ({ title, image, tags }) => {
   const [visible, setVisible] = useState(false);
@@ -19,21 +69,7 @@ const ProjectBox = ({ title, image, tags }) => {
       <img src={urlShortening} className="absolute -z-10" />
       <motion.div>
         <div className="grid h-[100px] w-[500px] grid-rows-2 items-center rounded-[10px] bg-black p-2 px-4 outline outline-white">
-          <div className="flex gap-4">
-            {tags.map((tag) => {
-              const color = getTagColor(tag);
-              console.log(color);
-              return (
-                <div
-                  key={uuidv4()}
-                  className={clsx("rounded-full p-1 px-4 outline")}
-                  style={{ outlineColor: `var(--${color})` }}
-                >
-                  {tag}
-                </div>
-              );
-            })}
-          </div>
+          <TagBox tags={tags} />
           <motion.div
             className="relative grid h-[30px] w-[30px] cursor-pointer items-center pl-2 outline outline-white"
             initial={{ borderRadius: 15 }}
@@ -54,7 +90,6 @@ const ProjectBox = ({ title, image, tags }) => {
               }
               animate={visible ? { opacity: 1 } : { opacity: 0 }}
             >
-              {" "}
               github
             </motion.div>
             <svg

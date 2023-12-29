@@ -8,7 +8,6 @@ export const getTagColor = (tag) => {
   switch (tag) {
     case "react":
       return "blue"; //blue
-    case "responsive":
     case "tailwind":
       return "lightblue"; //lightblue
     case "html/css":
@@ -21,6 +20,7 @@ export const getTagColor = (tag) => {
     case "api":
       return "green"; //green
     case "c#":
+    case "responsive":
       return "purple"; //purple
 
     default:

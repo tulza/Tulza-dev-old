@@ -19,8 +19,9 @@ const HighlightedText = ({ text, color, offset, className }) => {
       <div
         className={clsx(
           "absolute -z-10 h-2/3 w-[90%] opacity-20",
-          `-bottom-${y} -right-${x} bg-${color}`,
+          `bg-${color}`,
         )}
+        style={{ right: -offset[0], bottom: -offset[1] }}
       />
       {text}
     </motion.div>

@@ -34,15 +34,34 @@ const MyProjects = () => {
           }
           animate={isInView ? "visible" : "hidden"}
         >
+          {/*1-3 projects */}
+          <ProjectBox
+            title="Web-portfolio"
+            tags={[
+              "React",
+              "Tailwind",
+              "javascript",
+              "api",
+              "Framer motion",
+              "html/css",
+              "----",
+            ]}
+          />
           <ProjectBox
             title="URL-shortening-API-page"
-            tags={["React", "Tailwind", "javascript", "api"]}
+            tags={[
+              "React",
+              "Tailwind",
+              "javascript",
+              "api",
+              "responsive",
+              "html/css",
+            ]}
           />
           <ProjectBox
             title="Age-calculator-app"
             tags={["React", "Tailwind", "javascript"]}
           />
-          <ProjectBox title="Stray-Artist" tags={["Unity", "C#"]} />
         </motion.div>
         <motion.div
           className="flex -translate-x-20 gap-10"
@@ -59,9 +78,16 @@ const MyProjects = () => {
           }
           animate={isInView ? "visible" : "hidden"}
         >
-          <ProjectBox />
-          <ProjectBox />
-          <ProjectBox />
+          {/*4-6 projects */}
+          <ProjectBox
+            title="URL-shortening-API-page"
+            tags={["React", "Tailwind", "javascript", "api"]}
+          />
+          <ProjectBox
+            title="Age-calculator-app"
+            tags={["React", "Tailwind", "javascript"]}
+          />
+          <ProjectBox title="Stray-Artist" tags={["Unity", "C#"]} />
         </motion.div>
       </motion.div>
     </Section>
