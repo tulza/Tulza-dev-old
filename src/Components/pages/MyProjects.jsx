@@ -92,7 +92,7 @@ const MyProjects = () => {
           />
           <ProjectBox
             title="Solitaire lite"
-            tags={["Python", "Turtle"]}
+            tags={["Python", "Turtle graphics"]}
             image={solitaireGame}
           />
           <ProjectBox title="Stray-Artist" tags={["Unity", "C#"]} />

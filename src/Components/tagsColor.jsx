@@ -20,7 +20,7 @@ export const getTagColor = (tag) => {
       return "yellow"; //yellow
     case "post api":
     case "rest api":
-    case "turtle":
+    case "turtle graphics":
       return "green"; //green
     case "c#":
     case "responsive":
