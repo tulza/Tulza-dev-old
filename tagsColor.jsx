@@ -16,8 +16,10 @@ export const getTagColor = (tag) => {
     case "framer motion":
       return "gray"; //gray
     case "javascript":
+    case "python":
       return "yellow"; //yellow
     case "api":
+    case "turtle":
       return "green"; //green
     case "c#":
     case "responsive":

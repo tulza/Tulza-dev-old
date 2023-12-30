@@ -4,7 +4,6 @@ import { projectBoxPopUp } from "./framer-variant";
 import { getTagColor } from "../../tagsColor";
 import { v4 as uuidv4 } from "uuid";
 import clsx from "clsx";
-import { urlShortening } from "./svg/projectImage";
 import { useRef } from "react";
 
 const TagBox = ({ tags }) => {
@@ -69,7 +68,7 @@ const ProjectBox = ({ title, image, tags }) => {
       <p className="absolute top-0 m-2 rounded-full bg-black p-2 outline">
         {title}
       </p>
-      <img src={urlShortening} className="absolute -z-10" />
+      <img src={image} className="absolute -z-10" />
       <motion.div>
         <div className="grid h-[100px] w-[500px] grid-rows-2 items-center rounded-[10px] bg-black p-2 px-4 outline outline-white">
           <TagBox tags={tags} />

@@ -3,6 +3,12 @@ import ProjectBox from "../ProjectBox";
 import { motion, useInView } from "framer-motion";
 import Section from "../Section";
 import HighlightedText from "../highlightedText";
+import {
+  urlShortening,
+  adviceGenComp,
+  ageClacComp,
+  solitaireGame,
+} from "../svg/projectImage";
 
 const MyProjects = () => {
   const ref = useRef(null);
@@ -47,6 +53,7 @@ const MyProjects = () => {
           />
           <ProjectBox
             title="URL-shortening-API-page"
+            image={urlShortening}
             tags={[
               "React",
               "javascript",
@@ -58,7 +65,8 @@ const MyProjects = () => {
           />
           <ProjectBox
             title="Age-calculator-app"
-            tags={["React", "Tailwind", "javascript"]}
+            image={ageClacComp}
+            tags={["html/css", "javascript", "responsive"]}
           />
         </motion.div>
         <motion.div
@@ -78,12 +86,14 @@ const MyProjects = () => {
         >
           {/*4-6 projects */}
           <ProjectBox
+            image={adviceGenComp}
             title="Advice generator app"
-            tags={["React", "Tailwind", "javascript", "api"]}
+            tags={["html/css", "javascript", "api"]}
           />
           <ProjectBox
-            title="Age-calculator-app"
-            tags={["React", "Tailwind", "javascript"]}
+            title="Solitaire lite"
+            tags={["Python", "Turtle"]}
+            image={solitaireGame}
           />
           <ProjectBox title="Stray-Artist" tags={["Unity", "C#"]} />
         </motion.div>
