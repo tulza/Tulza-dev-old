@@ -12,7 +12,7 @@ import {
 
 const MyProjects = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.5 });
+  const isInView = useInView(ref, { amount: 0.2 });
   const stagger = 0.1;
   return (
     <Section classname="grid items-center">
