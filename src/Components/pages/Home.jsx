@@ -7,6 +7,7 @@ import Section from "../Section";
 import { motion } from "framer-motion";
 import AboutMe from "./AboutMe";
 import MyProjects from "./MyProjects";
+import Contacts from "./Contacts";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Introduction />
       <AboutMe />
       <MyProjects />
+      <Contacts />
     </Fragment>
   );
 };

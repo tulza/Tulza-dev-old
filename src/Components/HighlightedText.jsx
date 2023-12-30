@@ -15,7 +15,7 @@ const HighlightedText = ({ text, color, offset, className }) => {
   className = className ? className : "text-2xl";
   const [x, y] = offset;
   return (
-    <motion.div className={clsx(`${className} relative w-max`)}>
+    <motion.div className={clsx(`${className} relative h-min w-max`)}>
       <div
         className={clsx(
           "absolute -z-10 h-2/3 w-[90%] opacity-20",

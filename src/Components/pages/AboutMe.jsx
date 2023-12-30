@@ -4,15 +4,15 @@ import HighlightedText from "../highlightedText";
 
 const AboutMe = () => {
   return (
-    <Section>
-      <div className="flex justify-end">
+    <div className="relative flex h-[200vh] w-full flex-col">
+      <div className="sticky top-0 grid h-[100vh] p-20 ">
         <HighlightedText
           text="&lt;About me/&zwnj;&gt;"
-          className="mr-4 text-4xl"
+          className="mr-30 justify-self-end text-4xl"
           color="blue"
         />
       </div>
-    </Section>
+    </div>
   );
 };
 
