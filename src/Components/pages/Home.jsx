@@ -8,11 +8,11 @@ import { motion } from "framer-motion";
 import AboutMe from "./AboutMe";
 import MyProjects from "./MyProjects";
 
-
 const Home = () => {
   return (
     <Fragment>
       <Introduction />
+      <AboutMe />
       <MyProjects />
     </Fragment>
   );

@@ -13,6 +13,10 @@
   --gray: #2c2e30;
   --lightblue: #83c3df;
 }
+* {
+  /* @apply outline; */
+}
+
 html {
   background-color: var(--black);
 }

@@ -42,8 +42,8 @@ const NavigationBar = () => {
         <A />
         <div className="mr-12 flex gap-12">
           <Button title="About me" highlight="bg-blue" />
-          <Button title="Education" highlight="bg-yellow" />
           <Button title="Projects" highlight="bg-green" />
+          <Button title="Contacts" highlight="bg-yellow" />
           <Button title="Resume" highlight="bg-purple" />
         </div>
       </div>

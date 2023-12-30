@@ -4,9 +4,9 @@ import React from "react";
 
 /**
  * <function description>
- * @param {string} text fdsafsdf
- * @param {string} color dsfsdf
- * @param {array} offset sdfsdf
+ * @param {string} text text
+ * @param {string} color  uses root color
+ * @param {array} offset [x, y] translate offset
  * @return {div} returns a div text box with highlighted background
  */
 const HighlightedText = ({ text, color, offset, className }) => {
