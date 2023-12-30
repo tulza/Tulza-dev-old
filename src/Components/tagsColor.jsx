@@ -18,7 +18,8 @@ export const getTagColor = (tag) => {
     case "javascript":
     case "python":
       return "yellow"; //yellow
-    case "api":
+    case "post api":
+    case "rest api":
     case "turtle":
       return "green"; //green
     case "c#":

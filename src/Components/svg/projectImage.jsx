@@ -1,8 +1,8 @@
-import urlShortening from "./Project image/urlShortening.svg";
-import adviceGenComp from "./Project image/adviceGeneratorComponent.svg";
-import ageClacComp from "./Project image/ageClacComponent.svg";
-import solitaireGame from "./Project image/pythonSolitaire.svg";
-import tipCalcComp from "./Project image/tipCalculatorComponent.svg";
+import urlShortening from "./projectImage/urlShortening.svg";
+import adviceGenComp from "./projectImage/adviceGeneratorComponent.svg";
+import ageClacComp from "./projectImage/ageClacComponent.svg";
+import solitaireGame from "./projectImage/pythonSolitaire.svg";
+import tipCalcComp from "./projectImage/tipCalculatorComponent.svg";
 
 export {
   urlShortening,

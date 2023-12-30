@@ -45,7 +45,7 @@ const MyProjects = () => {
             title="Web-portfolio"
             tags={[
               "React",
-              "javascript",
+              "Javascript",
               "Tailwind",
               "Framer motion",
               "html/css",
@@ -56,17 +56,17 @@ const MyProjects = () => {
             image={urlShortening}
             tags={[
               "React",
-              "javascript",
+              "Javascript",
               "Tailwind",
-              "responsive",
-              "api",
+              "Responsive",
+              "Post api",
               "html/css",
             ]}
           />
           <ProjectBox
             title="Age-calculator-app"
             image={ageClacComp}
-            tags={["html/css", "javascript", "responsive"]}
+            tags={["html/css", "Javascript", "Responsive"]}
           />
         </motion.div>
         <motion.div
@@ -88,7 +88,7 @@ const MyProjects = () => {
           <ProjectBox
             image={adviceGenComp}
             title="Advice generator app"
-            tags={["html/css", "javascript", "api"]}
+            tags={["html/css", "Javascript", "RestAPI"]}
           />
           <ProjectBox
             title="Solitaire lite"
