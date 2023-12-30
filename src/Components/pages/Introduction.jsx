@@ -1,5 +1,5 @@
 import React from "react";
-import { blob, itemFrame } from "../svg/ImageImport.jsx";
+import { blob } from "../svg/ImageImport.jsx";
 import { easeIn, motion } from "framer-motion";
 import clsx from "clsx";
 import Section from "../Section.jsx";
@@ -10,6 +10,7 @@ import { highlightBox } from "../framer-variant.js";
 import IconSlide from "../IconSlide.jsx";
 import MovingIcons from "../MovingIcons.jsx";
 import { animateChar } from "../framer-variant.js";
+import VisibleInView from "../VisibleInView.jsx";
 
 const Blobs = () => {
   const rotate = 360;
@@ -122,13 +123,15 @@ const Introduction = () => {
                 stagger={0.1}
                 delay={0.75}
               />
-              <motion.div
-                className="pointer-events-none absolute bottom-0 right-0 h-1/2 translate-x-[3rem] bg-blue text-[100px] text-transparent opacity-40"
-                variants={highlightBox}
-              >
-                {/* text here so that the highlight matches the text width */}
-                Tulza
-              </motion.div>
+              <VisibleInView amount={1} delay={1} duration={0.25}>
+                <motion.div
+                  className="pointer-events-none absolute bottom-0 right-0 h-1/2 translate-x-[3rem] bg-blue text-[100px] text-transparent opacity-40"
+                  variants={highlightBox}
+                >
+                  {/* text here so that the highlight matches the text width */}
+                  Tulza
+                </motion.div>
+              </VisibleInView>
             </motion.div>
           </div>
           {/* Small text */}

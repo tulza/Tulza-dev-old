@@ -9,6 +9,8 @@ import Framer from "./Framer.svg";
 import FigmaLogo from "./FigmaLogo.svg";
 import BoxLink from "./boxLink.svg";
 import LinkLogo from "./LinkLogo.svg";
+import GithubIcon from "./GithubIcon.svg";
+import LinkedinIcon from "./LinkedinIcon.svg";
 
 export {
   itemFrame,
@@ -22,4 +24,6 @@ export {
   FigmaLogo,
   BoxLink,
   LinkLogo,
+  GithubIcon,
+  LinkedinIcon,
 };
