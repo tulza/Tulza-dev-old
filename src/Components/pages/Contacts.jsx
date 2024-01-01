@@ -15,7 +15,7 @@ const Contacts = () => {
   return (
     <Section>
       <motion.div
-        className="ml-30 m-10 flex h-full flex-col rounded-lg p-10 outline"
+        className="ml-30 m-10 flex h-full flex-col justify-center rounded-lg p-10 outline"
         ref={ref}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={isInView ? { duration: 0.5 } : { duration: 0.2 }}
@@ -26,7 +26,7 @@ const Contacts = () => {
           color="yellow"
         />
         <motion.div
-          className="mx-40 flex h-full items-center justify-evenly gap-40"
+          className="m-40 flex h-full items-center justify-evenly gap-40"
           ref={contentRef}
           animate={contentIsInView ? "visible" : "hidden"}
           transition={
@@ -35,7 +35,7 @@ const Contacts = () => {
               : { duration: 0.2 }
           }
         >
-          <div className="flex flex-col gap-10 ">
+          <div className="mb-16 flex flex-col gap-12">
             <SocialIcons
               image={GithubIcon}
               text="Tulza"
@@ -66,7 +66,7 @@ const InputForms = ({ text }) => {
   return (
     <>
       <motion.div
-        className="grid w-[1000px] gap-10 rounded-lg p-8 pb-20"
+        className="flex w-[1000px] flex-col gap-8 rounded-lg px-8"
         variants={contactsIconVar}
       >
         <div className="grid w-full grid-cols-2 gap-16 rounded-lg">
@@ -77,7 +77,7 @@ const InputForms = ({ text }) => {
         <InputField text="Message" />
         <button
           value="submit"
-          className="h-[60px] w-min justify-self-end rounded-lg px-10 font-bold outline"
+          className="h-[60px] w-min self-end rounded-lg px-10 font-bold outline"
         >
           summit
         </button>
@@ -105,7 +105,7 @@ const SocialIcons = ({ text, image, link, variants }) => {
         variants={variants}
         className="flex items-center gap-10 text-3xl font-bold"
       >
-        <img className="w-[75px]" src={image} />
+        <img className="w-[80px]" src={image} />
         <p>{text}</p>
       </motion.a>
     </>
