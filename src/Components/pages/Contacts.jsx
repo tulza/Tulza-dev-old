@@ -10,7 +10,7 @@ const Contacts = () => {
   const ref = useRef(null);
   const contentRef = useRef(null);
   const isInView = useInView(ref, { amount: 0.2 });
-  const contentIsInView = useInView(contentRef, { amount: 0.9 });
+  const contentIsInView = useInView(contentRef, { amount: 0.3 });
 
   return (
     <Section>
@@ -77,7 +77,7 @@ const InputForms = ({ text }) => {
         <InputField text="Message" />
         <button
           value="submit"
-          className="h-[60px] w-min self-end rounded-lg px-10 font-bold outline"
+          className="h-[60px] w-min self-end rounded-lg px-10 font-bold outline transition-colors hover:bg-white hover:text-black"
         >
           summit
         </button>
