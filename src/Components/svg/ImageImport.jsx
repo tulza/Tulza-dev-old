@@ -11,6 +11,7 @@ import BoxLink from "./boxLink.svg";
 import LinkLogo from "./LinkLogo.svg";
 import GithubIcon from "./GithubIcon.svg";
 import LinkedinIcon from "./LinkedinIcon.svg";
+import EmailIcon from "./email.svg";
 
 export {
   itemFrame,
@@ -26,4 +27,5 @@ export {
   LinkLogo,
   GithubIcon,
   LinkedinIcon,
+  EmailIcon,
 };

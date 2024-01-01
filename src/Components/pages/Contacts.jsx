@@ -3,7 +3,7 @@ import Section from "../Section";
 import HighlightedText from "../highlightedText";
 import VisibleInView from "../VisibleInView";
 import { motion, useInView } from "framer-motion";
-import { GithubIcon, LinkedinIcon } from "../svg/ImageImport.jsx";
+import { GithubIcon, LinkedinIcon, EmailIcon } from "../svg/ImageImport.jsx";
 import { contactsIconVar } from "../framer-variant.js";
 
 const Contacts = () => {
@@ -26,7 +26,7 @@ const Contacts = () => {
           color="yellow"
         />
         <motion.div
-          className="flex h-full flex-col items-center justify-center gap-5"
+          className="mx-40 flex h-full items-center justify-evenly gap-40"
           ref={contentRef}
           animate={contentIsInView ? "visible" : "hidden"}
           transition={
@@ -35,23 +35,80 @@ const Contacts = () => {
               : { duration: 0.2 }
           }
         >
-          <div className="flex gap-10">
-            <motion.img src={GithubIcon} variants={contactsIconVar} />
-            <motion.img src={LinkedinIcon} variants={contactsIconVar} />
+          <div className="flex flex-col gap-10 ">
+            <SocialIcons
+              image={GithubIcon}
+              text="Tulza"
+              link="#"
+              variants={contactsIconVar}
+            />
+            <SocialIcons
+              image={LinkedinIcon}
+              text="---"
+              link="#"
+              variants={contactsIconVar}
+            />
+            <SocialIcons
+              image={EmailIcon}
+              text="---@gmail.com"
+              link="#"
+              variants={contactsIconVar}
+            />
           </div>
-          <motion.div
-            className="flex h-[350px] w-[1000px] flex-col gap-10 p-8 outline"
-            variants={contactsIconVar}
-          >
-            <div className="h-[80px] w-full outline"></div>
-            <div className="grid w-full grid-cols-2 gap-10">
-              <div className="h-[80px] outline"></div>
-              <div className="h-[80px] outline"></div>
-            </div>
-          </motion.div>
+          <InputForms />
         </motion.div>
       </motion.div>
     </Section>
+  );
+};
+
+const InputForms = ({ text }) => {
+  return (
+    <>
+      <motion.div
+        className="grid w-[1000px] gap-10 rounded-lg p-8 pb-20"
+        variants={contactsIconVar}
+      >
+        <div className="grid w-full grid-cols-2 gap-16 rounded-lg">
+          <InputField text="First name" />
+          <InputField text="Last name" />
+        </div>
+        <InputField text="Email" />
+        <InputField text="Message" />
+        <button
+          value="submit"
+          className="h-[60px] w-min justify-self-end rounded-lg px-10 font-bold outline"
+        >
+          summit
+        </button>
+      </motion.div>
+    </>
+  );
+};
+
+const InputField = ({ text }) => {
+  return (
+    <>
+      <div className="flex h-[100px] flex-col gap-2 font-bold">
+        <p className="text-white">{text}</p>
+        <input className="h-[60px] rounded-lg bg-black pl-4 outline"></input>
+      </div>
+    </>
+  );
+};
+
+const SocialIcons = ({ text, image, link, variants }) => {
+  return (
+    <>
+      <motion.a
+        href={link}
+        variants={variants}
+        className="flex items-center gap-10 text-3xl font-bold"
+      >
+        <img className="w-[75px]" src={image} />
+        <p>{text}</p>
+      </motion.a>
+    </>
   );
 };
 
