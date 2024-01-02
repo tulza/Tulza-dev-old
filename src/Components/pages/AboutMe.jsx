@@ -3,6 +3,7 @@ import HighlightedText from "../highlightedText";
 import VisibleInView from "../VisibleInView";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef } from "react";
+import clsx from "clsx";
 
 const AboutMe = () => {
   const ref = useRef(null);
@@ -11,9 +12,18 @@ const AboutMe = () => {
     offset: ["end end", "start start"],
   });
 
-  const [x, setx] = useState(0);
+  // !! This is manual input
+  const [state, setState] = useState(0);
+  const configItemsCount = 3;
+  const boxWidth = 1200;
+  const gap = 500;
+  const calcTranslate = boxWidth + gap;
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    setx(latest * 100 - 33.3);
+    for (let i = 1; i < configItemsCount + 1; i++) {
+      if (latest <= i / configItemsCount) {
+        return setState(configItemsCount - i);
+      }
+    }
   });
 
   return (
@@ -28,29 +38,30 @@ const AboutMe = () => {
             />
           </VisibleInView>
           <div className="grid h-full w-full place-items-center">
-            <VisibleInView>
+            <div
+              className={clsx(
+                `relative grid w-[${boxWidth}px] grid-flow-col items-center`,
+              )}
+            >
               <motion.div
-                className="flex gap-[150px]"
-                animate={{ x: `${x}%` }}
-                transition={{ ease: "easeInOut", delay: 0, duration: 0 }}
+                className={clsx(`flex gap-[500px]`)}
+                animate={{ x: -calcTranslate * state }}
+                transition={{
+                  ease: "easeInOut",
+                  duration: 0.75,
+                  type: "spring",
+                  damping: 15,
+                }}
               >
-                <InfoBox />
-                <InfoBox />
-                <InfoBox />
+                <div className={"h-[1400px] w-[1200px] outline"}></div>
+                <div className={"h-[1400px] w-[1200px] outline"}></div>
+                <div className={"h-[1400px] w-[1200px] outline"}></div>
               </motion.div>
-            </VisibleInView>
+            </div>
           </div>
           <ProgressBar scrollYProgress={scrollYProgress} />
         </div>
       </div>
-    </>
-  );
-};
-
-const InfoBox = () => {
-  return (
-    <>
-      <div className="h-[400px] w-[400px] outline"></div>
     </>
   );
 };
