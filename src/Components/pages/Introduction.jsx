@@ -1,14 +1,11 @@
 import React from "react";
 import { blob } from "../svg/ImageImport.jsx";
-import { easeIn, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import clsx from "clsx";
 import Section from "../Section.jsx";
-import AnimatedText from "../AnimatedText.jsx";
-import SlideInOutText from "../SlideInOutText.jsx";
+import AnimatedText from "../Text/AnimatedText.jsx";
 import NavigationBar from "../Navigation/NavigationBar.jsx";
 import { highlightBox } from "../framer-variant.js";
-import IconSlide from "../IconSlide.jsx";
-import MovingIcons from "../MovingIcons.jsx";
 import { animateChar } from "../framer-variant.js";
 import VisibleInView from "../VisibleInView.jsx";
 

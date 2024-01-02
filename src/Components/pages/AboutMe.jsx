@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Section from "../Section";
 import HighlightedText from "../highlightedText";
 import VisibleInView from "../VisibleInView";
-import { delay, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef } from "react";
 
 const AboutMe = () => {
@@ -14,7 +13,6 @@ const AboutMe = () => {
 
   const [x, setx] = useState(0);
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log(latest);
     setx(latest * 100 - 33.3);
   });
 
@@ -30,15 +28,17 @@ const AboutMe = () => {
             />
           </VisibleInView>
           <div className="grid h-full w-full place-items-center">
-            <motion.div
-              className="flex gap-[150px]"
-              animate={{ x: `${x}%` }}
-              transition={{ ease: "easeInOut", delay: 0, duration: 0 }}
-            >
-              <InfoBox />
-              <InfoBox />
-              <InfoBox />
-            </motion.div>
+            <VisibleInView>
+              <motion.div
+                className="flex gap-[150px]"
+                animate={{ x: `${x}%` }}
+                transition={{ ease: "easeInOut", delay: 0, duration: 0 }}
+              >
+                <InfoBox />
+                <InfoBox />
+                <InfoBox />
+              </motion.div>
+            </VisibleInView>
           </div>
           <ProgressBar scrollYProgress={scrollYProgress} />
         </div>

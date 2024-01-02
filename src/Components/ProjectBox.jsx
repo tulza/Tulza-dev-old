@@ -60,15 +60,18 @@ const ProjectBox = ({ title, image, tags }) => {
   const [OnHoverButton, setHoverButton] = useState(false);
   const [OnHoverImage, setHoverImage] = useState(false);
   tags = tags ? tags : [];
-
   return (
     <motion.div
       className="relative flex h-[300px] w-[500px] flex-col justify-end overflow-hidden rounded-[10px] outline outline-white"
       variants={projectBoxPopUp}
     >
-      <p className="absolute top-0 m-2 rounded-full bg-black p-2 outline">
+      <motion.p
+        className="absolute top-0 m-2 rounded-full bg-black p-2 outline"
+        animate={OnHoverImage ? { y: "-150%" } : {}}
+        transition={{ ease: "easeInOut" }}
+      >
         {title}
-      </p>
+      </motion.p>
       <motion.div
         className="absolute right-0 top-0 m-2 flex aspect-square h-10 w-10 cursor-pointer place-items-center rounded-full bg-black p-2 outline"
         onHoverStart={() => {
@@ -113,6 +116,8 @@ const ProjectBox = ({ title, image, tags }) => {
         >
           <motion.div className="grid h-[100px] grid-rows-2 items-center bg-black p-2 px-4">
             <TagBox tags={tags} />
+
+            {/* view on github Button */}
             <motion.div
               className="relative grid h-[30px] w-[30px] cursor-pointer items-center pl-2 outline outline-white"
               initial={{ borderRadius: 15 }}

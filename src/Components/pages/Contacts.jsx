@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
 import Section from "../Section";
 import HighlightedText from "../highlightedText";
-import VisibleInView from "../VisibleInView";
 import { motion, useInView } from "framer-motion";
-import { GithubIcon, LinkedinIcon, EmailIcon } from "../svg/ImageImport.jsx";
+import { GithubIcon, LinkedinIcon } from "../svg/ImageImport.jsx";
 import { contactsIconVar } from "../framer-variant.js";
 
 const Contacts = () => {
@@ -35,7 +34,7 @@ const Contacts = () => {
               : { duration: 0.2 }
           }
         >
-          <div className="mb-16 flex flex-col gap-12">
+          <div className="flex flex-col gap-12">
             <SocialIcons
               image={GithubIcon}
               text="Tulza"
@@ -45,12 +44,6 @@ const Contacts = () => {
             <SocialIcons
               image={LinkedinIcon}
               text="---"
-              link="#"
-              variants={contactsIconVar}
-            />
-            <SocialIcons
-              image={EmailIcon}
-              text="---@gmail.com"
               link="#"
               variants={contactsIconVar}
             />
@@ -74,12 +67,15 @@ const InputForms = ({ text }) => {
           <InputField text="Last name" />
         </div>
         <InputField text="Email" />
-        <InputField text="Message" />
+        <div className="flex h-[100px] flex-col gap-2 font-bold">
+          <p className="text-white">Message</p>
+          <input className="h-[60px] border-b-4 bg-black pl-4 "></input>
+        </div>
         <button
-          value="submit"
+          value="Send"
           className="h-[60px] w-min self-end rounded-lg px-10 font-bold outline transition-colors hover:bg-white hover:text-black"
         >
-          summit
+          Send
         </button>
       </motion.div>
     </>
@@ -91,7 +87,7 @@ const InputField = ({ text }) => {
     <>
       <div className="flex h-[100px] flex-col gap-2 font-bold">
         <p className="text-white">{text}</p>
-        <input className="h-[60px] rounded-lg bg-black pl-4 outline"></input>
+        <input className="h-[60px] rounded-lg !bg-black pl-4 outline "></input>
       </div>
     </>
   );

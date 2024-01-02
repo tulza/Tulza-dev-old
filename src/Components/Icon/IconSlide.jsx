@@ -8,7 +8,7 @@ import {
   TailwindLogo,
   Framer,
   FigmaLogo,
-} from "./svg/ImageImport";
+} from "../svg/ImageImport";
 import { v4 as uuidv4 } from "uuid";
 
 const Frame = ({ icon }) => {

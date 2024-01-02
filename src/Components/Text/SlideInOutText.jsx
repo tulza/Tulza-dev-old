@@ -1,4 +1,4 @@
-import * as iconData from "../data.json";
+import * as iconData from "../../data.json";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
