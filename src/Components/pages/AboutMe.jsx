@@ -4,6 +4,9 @@ import VisibleInView from "../VisibleInView";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef } from "react";
 import clsx from "clsx";
+import MeSection from "../../../MeSection";
+import EducationSection from "../../../EducationSection";
+import SkillSection from "../../../SkillSection";
 
 const AboutMe = () => {
   const ref = useRef(null);
@@ -15,7 +18,7 @@ const AboutMe = () => {
   // !! This is manual input
   const [state, setState] = useState(0);
   const configItemsCount = 3;
-  const boxWidth = 1200;
+  const boxWidth = 1000;
   const gap = 500;
   const calcTranslate = boxWidth + gap;
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -53,9 +56,15 @@ const AboutMe = () => {
                   damping: 15,
                 }}
               >
-                <div className={"h-[1400px] w-[1200px] outline"}></div>
-                <div className={"h-[1400px] w-[1200px] outline"}></div>
-                <div className={"h-[1400px] w-[1200px] outline"}></div>
+                <div className={"h-[600px] w-[1000px] outline"}>
+                  <MeSection />
+                </div>
+                <div className={"h-[600px] w-[1000px] outline"}>
+                  <EducationSection />
+                </div>
+                <div className={"h-[600px] w-[1000px] outline"}>
+                  <SkillSection />
+                </div>
               </motion.div>
             </div>
           </div>
