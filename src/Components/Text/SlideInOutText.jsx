@@ -16,12 +16,12 @@ const SlideInOutText = ({ data }) => {
 
   useEffect(() => {
     setText([iconList[index], iconList[(index + 1) % iconList.length]]);
-    console.log(text);
+    // console.log(text);
   }, [index]);
 
   const handleNextItem = () => {
     setIndex(() => {
-      console.log((index + 1) % iconList.length);
+      // console.log((index + 1) % iconList.length);
       return (index + 1) % iconList.length;
     });
   };

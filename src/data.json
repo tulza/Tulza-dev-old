@@ -1,9 +1,9 @@
 {
   "tools": [
-    { "name": "React", "color": "blue" },
-    { "name": "Framer motion", "color": "white" },
-    { "name": "Tailwind", "color": "lightblue" },
     { "name": "Html/Css", "color": "red" },
-    { "name": "Javascript", "color": "yellow" }
+    { "name": "Javascript", "color": "yellow" },
+    { "name": "React", "color": "blue" },
+    { "name": "Tailwind", "color": "lightblue" },
+    { "name": "Framer motion", "color": "offwhite" }
   ]
 }

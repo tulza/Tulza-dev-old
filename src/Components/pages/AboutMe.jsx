@@ -4,9 +4,9 @@ import VisibleInView from "../VisibleInView";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef } from "react";
 import clsx from "clsx";
-import MeSection from "../../../MeSection";
-import EducationSection from "../../../EducationSection";
-import SkillSection from "../../../SkillSection";
+import MeSection from "./aboutMeSection/MeSection";
+import SkillSection from "./aboutMeSection/SkillSection";
+import EducationSection from "./aboutMeSection/EducationSection";
 
 const AboutMe = () => {
   const ref = useRef(null);
@@ -17,7 +17,7 @@ const AboutMe = () => {
 
   // !! This is manual input
   const [state, setState] = useState(0);
-  
+
   const configItemsCount = 3;
   const boxWidth = 1000;
   const gap = 500;

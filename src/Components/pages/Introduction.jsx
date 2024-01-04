@@ -147,7 +147,7 @@ const Introduction = () => {
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 2 }}
+                transition={{ delay: 2.25 }}
               >
                 <SlideInOutText data={toolsData.tools} />
               </motion.span>
