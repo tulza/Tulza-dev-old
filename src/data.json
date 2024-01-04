@@ -1,7 +1,9 @@
 {
-  "icons": [
-    { "name": "React" },
-    { "name": "Framer motion" },
-    { "name": "Tailwind" }
+  "tools": [
+    { "name": "React", "color": "blue" },
+    { "name": "Framer motion", "color": "white" },
+    { "name": "Tailwind", "color": "lightblue" },
+    { "name": "Html/Css", "color": "red" },
+    { "name": "Javascript", "color": "yellow" }
   ]
 }

@@ -2,7 +2,7 @@ import React, { Fragment, useRef } from "react";
 import ProjectBox from "../ProjectBox";
 import { motion, useInView } from "framer-motion";
 import Section from "../Section";
-import HighlightedText from "../highlightedText";
+import HighlightedText from "../Text/HighlightedText";
 import {
   urlShortening,
   adviceGenComp,

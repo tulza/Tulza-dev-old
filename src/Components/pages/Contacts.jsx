@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Section from "../Section";
-import HighlightedText from "../highlightedText";
+import HighlightedText from "../Text/HighlightedText.jsx";
 import { motion, useInView } from "framer-motion";
 import { GithubIcon, LinkedinIcon } from "../svg/ImageImport.jsx";
 import { contactsIconVar } from "../framer-variant.js";
@@ -48,14 +48,14 @@ const Contacts = () => {
               variants={contactsIconVar}
             />
           </div>
-          <InputForms />
+          <EmailForms />
         </motion.div>
       </motion.div>
     </Section>
   );
 };
 
-const InputForms = ({ text }) => {
+const EmailForms = ({ text }) => {
   return (
     <>
       <motion.div
@@ -69,7 +69,10 @@ const InputForms = ({ text }) => {
         <InputField text="Email" />
         <div className="flex h-[100px] flex-col gap-2 font-bold">
           <p className="text-white">Message</p>
-          <input className="h-[60px] border-b-4 bg-black pl-4 "></input>
+          <input
+            className="h-[60px] border-b-4 bg-black pl-4"
+            placeholder="Hello!"
+          ></input>
         </div>
         <button
           value="Send"
@@ -82,12 +85,15 @@ const InputForms = ({ text }) => {
   );
 };
 
-const InputField = ({ text }) => {
+const InputField = ({ text, placeholder }) => {
   return (
     <>
       <div className="flex h-[100px] flex-col gap-2 font-bold">
         <p className="text-white">{text}</p>
-        <input className="h-[60px] rounded-lg !bg-black pl-4 outline "></input>
+        <input
+          className="h-[60px] rounded-lg !bg-black pl-4 outline "
+          placeholder={placeholder}
+        ></input>
       </div>
     </>
   );

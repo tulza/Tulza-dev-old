@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HighlightedText from "../highlightedText";
+import HighlightedText from "../Text/HighlightedText";
 import VisibleInView from "../VisibleInView";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef } from "react";
@@ -17,10 +17,12 @@ const AboutMe = () => {
 
   // !! This is manual input
   const [state, setState] = useState(0);
+  
   const configItemsCount = 3;
   const boxWidth = 1000;
   const gap = 500;
   const calcTranslate = boxWidth + gap;
+
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     for (let i = 1; i < configItemsCount + 1; i++) {
       if (latest <= i / configItemsCount) {

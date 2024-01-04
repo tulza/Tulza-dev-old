@@ -3,11 +3,13 @@ import { blob } from "../svg/ImageImport.jsx";
 import { motion } from "framer-motion";
 import clsx from "clsx";
 import Section from "../Section.jsx";
+import SlideInOutText from "../Text/SlideInOutText.jsx";
 import AnimatedText from "../Text/AnimatedText.jsx";
 import NavigationBar from "../Navigation/NavigationBar.jsx";
 import { highlightBox } from "../framer-variant.js";
 import { animateChar } from "../framer-variant.js";
 import VisibleInView from "../VisibleInView.jsx";
+import * as toolsData from "../../data.json";
 
 const Blobs = () => {
   const rotate = 360;
@@ -132,7 +134,7 @@ const Introduction = () => {
             </motion.div>
           </div>
           {/* Small text */}
-          <div className="flex text-2xl">
+          <div className="relative flex text-2xl">
             <AnimatedText
               className="text-2xl"
               text="Passionate in UX/UI Design working with"
@@ -141,12 +143,15 @@ const Introduction = () => {
               delay={1}
             />
             {/* slide in out text */}
-            <motion.span
-              className="flex items-end"
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2 }}
-            ></motion.span>
+            <VisibleInView delay={2}>
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2 }}
+              >
+                <SlideInOutText data={toolsData.tools} />
+              </motion.span>
+            </VisibleInView>
           </div>
         </div>
       </div>
