@@ -20,7 +20,7 @@ const AboutMe = () => {
 
   const configItemsCount = 3;
   const boxWidth = 600;
-  const gap = 200;
+  const gap = 500;
   const calcTranslate = boxWidth + gap;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -49,7 +49,7 @@ const AboutMe = () => {
               )}
             >
               <motion.div
-                className="flex gap-[200px]"
+                className="flex items-center gap-[500px]"
                 animate={{ x: -calcTranslate * state }}
                 transition={{
                   ease: "easeInOut",
@@ -59,12 +59,12 @@ const AboutMe = () => {
                 }}
               >
                 <StateWrapper state={0} currState={state}>
-                  <div className={"flex h-[400px] w-[600px]"}>
+                  <div className={"flex w-[600px]"}>
                     <MeSection activate={state == 0} />
                   </div>
                 </StateWrapper>
                 <StateWrapper state={1} currState={state}>
-                  <div className={"flex h-[400px] w-[600px] "}>
+                  <div className={"flex w-[600px] "}>
                     <EducationSection activate={state == 1} />
                   </div>
                 </StateWrapper>
