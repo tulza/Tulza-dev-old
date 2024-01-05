@@ -2,6 +2,7 @@ import React from "react";
 import AnimatedText from "../../Text/AnimatedText";
 import { slideUpText } from "../../framer-variant";
 import { motion } from "framer-motion";
+import { v4 as uuidv4 } from "uuid";
 
 const SkillSection = ({ activate }) => {
   return (
@@ -10,7 +11,7 @@ const SkillSection = ({ activate }) => {
         <div>
           <h1 className="text-xl font-bold">Skills</h1>
           <hr></hr>
-          <p>
+          <div>
             {[
               "react",
               "Javascript",
@@ -21,10 +22,10 @@ const SkillSection = ({ activate }) => {
               "Python",
             ].map((item, index) => {
               return (
-                <div className="flex overflow-hidden " key={(item, "div")}>
+                <div className="flex overflow-hidden " key={uuidv4()}>
                   <AnimatedText
                     text={item}
-                    key={item}
+                    key={uuidv4()}
                     delay={index * 0.1}
                     variants={slideUpText}
                     condition={activate}
@@ -33,19 +34,19 @@ const SkillSection = ({ activate }) => {
                 </div>
               );
             })}
-          </p>
+          </div>
         </div>
         <div>
           <h1 className="text-xl font-bold">Soft Skills</h1>
           <hr></hr>
-          <p>
+          <div>
             {["Quick learner", "Problem solving", "animation", ""].map(
               (item, index) => {
                 return (
-                  <div className="flex overflow-hidden " key={(item, "div")}>
+                  <div className="flex overflow-hidden " key={uuidv4()}>
                     <AnimatedText
                       text={item}
-                      key={item}
+                      key={uuidv4()}
                       delay={index * 0.1 + 0.5}
                       variants={slideUpText}
                       condition={activate}
@@ -55,19 +56,19 @@ const SkillSection = ({ activate }) => {
                 );
               },
             )}
-          </p>
+          </div>
         </div>
       </div>
       <div>
         <h1 className="text-xl font-bold">Others</h1>
         <hr></hr>
-        <p>
+        <div>
           {["Excel", "LaTex"].map((item, index) => {
             return (
-              <div className="flex overflow-hidden " key={(item, "div")}>
+              <div className="flex overflow-hidden " key={uuidv4()}>
                 <AnimatedText
                   text={item}
-                  key={item}
+                  key={uuidv4()}
                   delay={index * 0.1 + 1}
                   variants={slideUpText}
                   condition={activate}
@@ -76,7 +77,7 @@ const SkillSection = ({ activate }) => {
               </div>
             );
           })}
-        </p>
+        </div>
       </div>
     </div>
   );

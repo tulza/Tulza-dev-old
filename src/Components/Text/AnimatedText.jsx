@@ -12,13 +12,14 @@ const AnimatedText = ({
   delay,
   transition,
   condition,
+  type,
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.2 });
   stagger = stagger ? stagger : 0.01;
   delay = delay ? delay : 0.01;
   transition = transition ? transition : null;
-  // if null it will be ignored because strictly equal
+  // if null it will strictly equal
   condition = condition === false ? false : true;
   return (
     <p className={className}>
@@ -32,18 +33,18 @@ const AnimatedText = ({
           {
             /* React doesn't like fragment not having a key*/
           }
+
           return (
             <Fragment key={uuidv4()}>
               {[...word].map((char) => {
                 return (
-                  <motion.span
+                  <ReturnText
+                    text={char}
                     variants={variants}
-                    className={clsx("inline-block", applyEachChar)}
+                    applyEachChar={applyEachChar}
                     transition={transition}
                     key={uuidv4()}
-                  >
-                    {char}
-                  </motion.span>
+                  />
                 );
               })}
               {/* only add spaces between words */}
@@ -57,6 +58,18 @@ const AnimatedText = ({
         })}
       </motion.span>
     </p>
+  );
+};
+
+const ReturnText = ({ text, variants, applyEachChar, transition }) => {
+  return (
+    <motion.span
+      variants={variants}
+      className={clsx("inline-block", applyEachChar)}
+      transition={transition}
+    >
+      {text}
+    </motion.span>
   );
 };
 
