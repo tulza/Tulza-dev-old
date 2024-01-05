@@ -20,7 +20,7 @@ const AboutMe = () => {
 
   const configItemsCount = 3;
   const boxWidth = 1000;
-  const gap = 500;
+  const gap = 0;
   const calcTranslate = boxWidth + gap;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -33,7 +33,7 @@ const AboutMe = () => {
 
   return (
     <>
-      <div className="flex h-[300vh] w-full flex-col" ref={ref}>
+      <div className="flex h-[250vh] w-full flex-col" ref={ref}>
         <div className="sticky top-0 flex h-[100vh] flex-col overflow-hidden p-20">
           <VisibleInView amount={1} className="self-end">
             <HighlightedText
@@ -49,7 +49,7 @@ const AboutMe = () => {
               )}
             >
               <motion.div
-                className={clsx(`flex gap-[500px]`)}
+                className="flex"
                 animate={{ x: -calcTranslate * state }}
                 transition={{
                   ease: "easeInOut",
@@ -58,15 +58,21 @@ const AboutMe = () => {
                   damping: 15,
                 }}
               >
-                <div className={"h-[600px] w-[1000px] outline"}>
-                  <MeSection />
-                </div>
-                <div className={"h-[600px] w-[1000px] outline"}>
-                  <EducationSection />
-                </div>
-                <div className={"h-[600px] w-[1000px] outline"}>
-                  <SkillSection />
-                </div>
+                <StateWrapper state={0} currState={state}>
+                  <div className={"h-[600px] w-[1000px] "}>
+                    <MeSection />
+                  </div>
+                </StateWrapper>
+                <StateWrapper state={1} currState={state}>
+                  <div className={"h-[600px] w-[1000px] "}>
+                    <EducationSection />
+                  </div>
+                </StateWrapper>
+                <StateWrapper state={2} currState={state}>
+                  <div className={"h-[600px] w-[1000px] "}>
+                    <SkillSection activate={state == 2} />
+                  </div>
+                </StateWrapper>
               </motion.div>
             </div>
           </div>
@@ -74,6 +80,17 @@ const AboutMe = () => {
         </div>
       </div>
     </>
+  );
+};
+
+const StateWrapper = ({ state, currState, children }) => {
+  return (
+    <motion.div
+      animate={state == currState ? { opacity: 1 } : { opacity: 0.2 }}
+      transition={{ duration: 0.5 }}
+    >
+      {children}
+    </motion.div>
   );
 };
 

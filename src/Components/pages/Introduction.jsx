@@ -137,7 +137,7 @@ const Introduction = () => {
           <div className="relative flex text-2xl">
             <AnimatedText
               className="text-2xl"
-              text="Passionate in UX/UI Design working with"
+              text="self-taught web developer working with"
               variants={animateChar}
               stagger={0.025}
               delay={1}

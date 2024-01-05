@@ -3,10 +3,14 @@ import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const transition = {
-  duration: 0.25,
+  duration: 0.5,
   ease: "easeInOut",
 };
 
+/**
+ * @param {JSON} Data {name:"", color:""}
+ *
+ */
 const SlideInOutText = ({ data }) => {
   const iconList = [...data].map((n) => {
     return [n.name, n.color];
@@ -27,10 +31,11 @@ const SlideInOutText = ({ data }) => {
   };
 
   return (
+    // ? key is used to unmount and mount text to restart animation
     <div className="w-0 whitespace-nowrap ">
       <motion.div
         initial={{ opacity: 1 }}
-        animate={{ y: "-60%", opacity: 0 }}
+        animate={{ y: "-30%", opacity: 0 }}
         transition={transition}
         key={uuidv4()}
       >
@@ -43,9 +48,9 @@ const SlideInOutText = ({ data }) => {
         key={uuidv4()}
         onAnimationComplete={() => {
           setTimeout(() => {
-            console.log("next");
+            // console.log("next");
             handleNextItem();
-          }, 1000);
+          }, 1500);
         }}
       >
         <p style={{ color: `var(--${text[1][1]})` }}>&nbsp;{text[1][0]}</p>
