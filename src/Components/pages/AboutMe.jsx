@@ -59,17 +59,17 @@ const AboutMe = () => {
                 }}
               >
                 <StateWrapper state={0} currState={state}>
-                  <div className={"h-[600px] w-[600px] "}>
+                  <div className={"flex h-[400px] w-[600px]"}>
                     <MeSection activate={state == 0} />
                   </div>
                 </StateWrapper>
                 <StateWrapper state={1} currState={state}>
-                  <div className={"h-[600px] w-[600px] "}>
+                  <div className={"flex h-[400px] w-[600px] "}>
                     <EducationSection activate={state == 1} />
                   </div>
                 </StateWrapper>
                 <StateWrapper state={2} currState={state}>
-                  <div className={"h-[600px] w-[600px] "}>
+                  <div className={"w-[600px]"}>
                     <SkillSection activate={state == 2} />
                   </div>
                 </StateWrapper>

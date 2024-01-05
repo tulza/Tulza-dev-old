@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useInView, motion } from "framer-motion";
+import { useInView, motion, AnimatePresence } from "framer-motion";
 import React, { Fragment, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -12,7 +12,6 @@ const AnimatedText = ({
   delay,
   transition,
   condition,
-  type,
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.2 });

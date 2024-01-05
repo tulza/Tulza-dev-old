@@ -12,6 +12,8 @@ import LinkLogo from "./LinkLogo.svg";
 import GithubIcon from "./GithubIcon.svg";
 import LinkedinIcon from "./LinkedinIcon.svg";
 import EmailIcon from "./email.svg";
+import UoaLogo from "./UoaLogo.png";
+import OtagoPolyLogo from "./OtagoPolyLogo.png";
 
 export {
   itemFrame,
@@ -28,4 +30,6 @@ export {
   GithubIcon,
   LinkedinIcon,
   EmailIcon,
+  UoaLogo,
+  OtagoPolyLogo,
 };
