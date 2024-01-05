@@ -16,7 +16,10 @@ const MyProjects = () => {
   const stagger = 0.1;
   return (
     <Section classname="grid items-center">
-      <motion.div className="m-20 grid place-items-center gap-10" ref={ref}>
+      <motion.div
+        className="m-20 grid place-items-center gap-10  overflow-hidden"
+        ref={ref}
+      >
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}

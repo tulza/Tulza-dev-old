@@ -14,42 +14,44 @@ const Contacts = () => {
   return (
     <Section>
       <motion.div
-        className="ml-30 m-10 flex h-full flex-col justify-center rounded-lg p-10 outline"
+        className=" flex h-full flex-col justify-center p-10 "
         ref={ref}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={isInView ? { duration: 0.5 } : { duration: 0.2 }}
       >
-        <HighlightedText
-          text="&lt;Contact me!/&zwnj;&gt;"
-          className="justify-self-start text-4xl"
-          color="yellow"
-        />
-        <motion.div
-          className="m-40 flex h-full items-center justify-evenly gap-40"
-          ref={contentRef}
-          animate={contentIsInView ? "visible" : "hidden"}
-          transition={
-            contentIsInView
-              ? { duration: 0.5, staggerChildren: 0.25 }
-              : { duration: 0.2 }
-          }
-        >
-          <div className="flex flex-col gap-12">
-            <SocialIcons
-              image={GithubIcon}
-              text="Tulza"
-              link="#"
-              variants={contactsIconVar}
-            />
-            <SocialIcons
-              image={LinkedinIcon}
-              text="---"
-              link="#"
-              variants={contactsIconVar}
-            />
-          </div>
-          <EmailForms />
-        </motion.div>
+        <div className=" flex h-full flex-col justify-center rounded-lg p-10 pt-20 outline">
+          <HighlightedText
+            text="&lt;Contact me!/&zwnj;&gt;"
+            className="justify-self-start text-4xl"
+            color="yellow"
+          />
+          <motion.div
+            className="m-20 flex h-full items-center justify-evenly gap-40"
+            ref={contentRef}
+            animate={contentIsInView ? "visible" : "hidden"}
+            transition={
+              contentIsInView
+                ? { duration: 0.5, staggerChildren: 0.25 }
+                : { duration: 0.2 }
+            }
+          >
+            <div className="flex flex-col gap-12">
+              <SocialIcons
+                image={GithubIcon}
+                text="Tulza"
+                link="#"
+                variants={contactsIconVar}
+              />
+              <SocialIcons
+                image={LinkedinIcon}
+                text="---"
+                link="#"
+                variants={contactsIconVar}
+              />
+            </div>
+            <EmailForms />
+          </motion.div>
+        </div>
       </motion.div>
     </Section>
   );
@@ -108,7 +110,7 @@ const SocialIcons = ({ text, image, link, variants }) => {
         className="flex items-center gap-10 text-3xl font-bold"
       >
         <img className="w-[80px]" src={image} />
-        <p>{text}</p>
+        <p className="whitespace-nowrap">{text}</p>
       </motion.a>
     </>
   );

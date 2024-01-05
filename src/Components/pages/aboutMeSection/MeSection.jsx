@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const MeSection = ({ activate }) => {
   return (
     <div className="h-max rounded-[0_75px_0_75px] p-4 py-12 text-center outline">
-      <p className="text-3xl">
+      <p className="whitespace-nowrap text-3xl">
         Hello, I&apos;m Tulza!{" "}
         <motion.div
           animate={activate && { rotate: [0, 30, 0] }}

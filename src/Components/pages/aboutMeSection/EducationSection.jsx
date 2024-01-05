@@ -18,7 +18,7 @@ const EducationSection = () => {
         <img src={UoaLogo} className="aspect-auto h-full" />
       </div>
       {/* item */}
-      <div>
+      {/* <div>
         <div className="grid w-full grid-flow-col justify-evenly">
           <div className="aspect-square w-[100px] bg-white"></div>
           <div className="aspect-square w-[100px] bg-white"></div>
@@ -26,7 +26,7 @@ const EducationSection = () => {
           <div className="aspect-square w-[100px] bg-white"></div>
         </div>
         <hr className="mt-4" />
-      </div>
+      </div> */}
       {/* gamejam */}
       <div className="flex h-[125px] gap-4">
         <img src={OtagoPolyLogo} className="aspect-auto h-full" />
