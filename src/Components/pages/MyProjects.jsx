@@ -15,9 +15,9 @@ const MyProjects = () => {
   const isInView = useInView(ref, { amount: 0.2 });
   const stagger = 0.1;
   return (
-    <Section classname="grid items-center">
+    <Section classname="grid items-center" id="projects">
       <motion.div
-        className="m-20 grid place-items-center gap-10  overflow-hidden"
+        className="m-20 grid place-items-center gap-10  overflow-hidden py-4"
         ref={ref}
       >
         <motion.div

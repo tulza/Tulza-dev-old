@@ -93,7 +93,7 @@ const CornerMarker = () => {
 
 const Introduction = () => {
   return (
-    <Section>
+    <Section id="intro">
       {/* Header */}
       <div>
         <Blobs />

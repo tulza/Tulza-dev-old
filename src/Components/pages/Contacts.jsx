@@ -12,7 +12,7 @@ const Contacts = () => {
   const contentIsInView = useInView(contentRef, { amount: 0.3 });
 
   return (
-    <Section>
+    <Section id="contacts">
       <motion.div
         className=" flex h-full flex-col justify-center p-10 "
         ref={ref}

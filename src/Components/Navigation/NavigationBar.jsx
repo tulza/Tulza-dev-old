@@ -18,9 +18,25 @@ const A = () => {
 };
 
 const NavigationBar = () => {
-  const Button = ({ title, highlight }) => {
-    return (
-      <>
+  return (
+    <>
+      <div className="flex justify-between p-4">
+        <A />
+        <div className="mr-12 flex gap-12">
+          <NavButton title="About me" highlight="bg-blue" href="#about-me" />
+          <NavButton title="Projects" highlight="bg-green" href="#projects" />
+          <NavButton title="Contacts" highlight="bg-yellow" href="#contacts" />
+          <NavButton title="Resume" highlight="bg-purple" href="" />
+        </div>
+      </div>
+    </>
+  );
+};
+
+const NavButton = ({ title, highlight, href }) => {
+  return (
+    <>
+      <a href={href}>
         <div>
           <motion.div className="relative cursor-pointer" whileHover="hovered">
             <span className="text-xl">{title}</span>
@@ -33,22 +49,8 @@ const NavigationBar = () => {
             />
           </motion.div>
         </div>
-      </>
-    );
-  };
-  return (
-    <>
-      <div className="flex justify-between p-4">
-        <A />
-        <div className="mr-12 flex gap-12">
-          <Button title="About me" highlight="bg-blue" />
-          <Button title="Projects" highlight="bg-green" />
-          <Button title="Contacts" highlight="bg-yellow" />
-          <Button title="Resume" highlight="bg-purple" />
-        </div>
-      </div>
+      </a>
     </>
   );
 };
-
 export default NavigationBar;

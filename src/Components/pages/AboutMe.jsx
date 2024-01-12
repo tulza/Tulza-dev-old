@@ -33,7 +33,7 @@ const AboutMe = () => {
 
   return (
     <>
-      <div className="flex h-[300vh] w-full flex-col" ref={ref}>
+      <div className="flex h-[300vh] w-full flex-col" ref={ref} id="about-me">
         <div className="sticky top-0 flex h-[100vh] flex-col overflow-hidden p-20">
           <VisibleInView amount={1} className="self-end">
             <HighlightedText
