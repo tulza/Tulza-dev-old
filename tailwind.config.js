@@ -22,7 +22,9 @@ export default {
         yellow: "var(--yellow)",
         white: "var(--white)",
       },
-      screens: {},
+      screens: {
+        "3xl": "1750px",
+      },
       fontFamily: {},
       transitionProperty: {},
     },

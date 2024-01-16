@@ -6,6 +6,7 @@ import Contacts from "./Contacts";
 import useWindowSize from "../hooks/useWindowSize";
 import useCursorPos from "../hooks/useCursorPos";
 import CursorOverlay from "../CursorOverlay";
+import Copypasto from "./Copypasto";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Introduction />
       <AboutMe />
       <MyProjects />
+      <Copypasto />
       <Contacts />
     </Fragment>
   );
