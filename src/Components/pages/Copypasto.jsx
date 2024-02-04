@@ -11,7 +11,7 @@ const Copypasto = () => {
   return (
     <Section classname="grid items-center justify-center" id="section2">
       <div className=" flex flex-col gap-10">
-        <div className="3xl:translate-x-20 flex flex-row gap-10">
+        <div className="flex flex-row gap-10 3xl:translate-x-20">
           <ProjectBox
             title="Web-portfolio"
             tags={[
@@ -40,7 +40,7 @@ const Copypasto = () => {
             tags={["html/css", "Javascript", "Responsive"]}
           />
         </div>
-        <div className="3xl:-translate-x-20 flex flex-row gap-10">
+        <div className="flex flex-row gap-10 3xl:-translate-x-20">
           <ProjectBox
             image={adviceGenComp}
             title="Advice generator app"
