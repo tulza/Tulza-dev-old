@@ -11,6 +11,74 @@ import { animateChar } from "../framer-variant.js";
 import VisibleInView from "../VisibleInView.jsx";
 import * as toolsData from "../../data.json";
 
+const Introduction = () => {
+  return (
+    <Section id="intro">
+      {/* Header */}
+      <div>
+        <Blobs />
+        <CircleLine />
+        <CornerMarker />
+        <NavigationBar />
+      </div>
+      {/* centre */}
+      <div className=" flex h-full items-center justify-center">
+        {/* Text */}
+        <div>
+          {/* big text */}
+          <div className="relative">
+            <AnimatedText
+              text="Hello I'm Tulza"
+              className="text-[100px]"
+              applyEachChar="text-transparent white-stroke"
+              variants={animateChar}
+              stagger={0.05}
+            />
+            <motion.div whileHover="hovered" className="pointer-events-auto">
+              <AnimatedText
+                text="Tulza"
+                className="absolute right-1 top-1 z-10 cursor-pointer text-[100px]"
+                variants={animateChar}
+                stagger={0.1}
+                delay={0.75}
+              />
+              <VisibleInView amount={1} delay={1} duration={0.25}>
+                <motion.div
+                  className="pointer-events-none absolute bottom-0 right-0 h-1/2 translate-x-[3rem] bg-blue text-[100px] text-transparent opacity-40"
+                  variants={highlightBox}
+                >
+                  {/* text here so that the highlight matches the text width */}
+                  Tulza
+                </motion.div>
+              </VisibleInView>
+            </motion.div>
+          </div>
+          {/* Small text */}
+          <div className="relative flex text-2xl">
+            <AnimatedText
+              className="text-2xl"
+              text="self-taught web developer working with"
+              variants={animateChar}
+              stagger={0.025}
+              delay={1}
+            />
+            {/* slide in out text */}
+            <VisibleInView delay={2}>
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2.25 }}
+              >
+                <SlideInOutText data={toolsData.tools} />
+              </motion.span>
+            </VisibleInView>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+};
+
 const Blobs = () => {
   const rotate = 360;
   const initial = [30, 90, 180];
@@ -88,74 +156,6 @@ const CircleLine = () => {
 const CornerMarker = () => {
   return (
     <div className="absolute bottom-5 right-5 h-[80px] w-[150px] rounded-[0_0_50px_0] border-b-[10px] border-r-[10px]"></div>
-  );
-};
-
-const Introduction = () => {
-  return (
-    <Section id="intro">
-      {/* Header */}
-      <div>
-        <Blobs />
-        <CircleLine />
-        <CornerMarker />
-        <NavigationBar />
-      </div>
-      {/* centre */}
-      <div className=" flex h-full items-center justify-center">
-        {/* Text */}
-        <div>
-          {/* big text */}
-          <div className="relative">
-            <AnimatedText
-              text="Hello I'm Tulza"
-              className="text-[100px]"
-              applyEachChar="text-transparent white-stroke"
-              variants={animateChar}
-              stagger={0.05}
-            />
-            <motion.div whileHover="hovered" className="pointer-events-auto">
-              <AnimatedText
-                text="Tulza"
-                className="absolute right-1 top-1 z-10 cursor-pointer text-[100px]"
-                variants={animateChar}
-                stagger={0.1}
-                delay={0.75}
-              />
-              <VisibleInView amount={1} delay={1} duration={0.25}>
-                <motion.div
-                  className="pointer-events-none absolute bottom-0 right-0 h-1/2 translate-x-[3rem] bg-blue text-[100px] text-transparent opacity-40"
-                  variants={highlightBox}
-                >
-                  {/* text here so that the highlight matches the text width */}
-                  Tulza
-                </motion.div>
-              </VisibleInView>
-            </motion.div>
-          </div>
-          {/* Small text */}
-          <div className="relative flex text-2xl">
-            <AnimatedText
-              className="text-2xl"
-              text="self-taught web developer working with"
-              variants={animateChar}
-              stagger={0.025}
-              delay={1}
-            />
-            {/* slide in out text */}
-            <VisibleInView delay={2}>
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2.25 }}
-              >
-                <SlideInOutText data={toolsData.tools} />
-              </motion.span>
-            </VisibleInView>
-          </div>
-        </div>
-      </div>
-    </Section>
   );
 };
 

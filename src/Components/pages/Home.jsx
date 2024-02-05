@@ -15,7 +15,6 @@ const Home = () => {
       <Introduction />
       <AboutMe />
       <MyProjects />
-      <Copypasto />
       <Contacts />
     </Fragment>
   );
