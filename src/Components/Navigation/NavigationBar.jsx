@@ -7,7 +7,6 @@ const NavigationBar = () => {
     <>
       <div className="flex justify-between p-4">
         <A />
-        <MobileNavigation />
         <div className="invisible mr-12 flex gap-12 md:visible">
           <NavButton title="About me" highlight="bg-blue" href="#about-me" />
           <NavButton title="Projects" highlight="bg-green" href="#projects" />
@@ -19,13 +18,13 @@ const NavigationBar = () => {
   );
 };
 
-const MobileNavigation = () => {
-  return (
-    <div className="m-4 grid h-10 justify-self-end">
-      <div className="h-1 w-10 bg-white" />
-      <div className="h-1 w-10 bg-white" />
-      <div className="h-1 w-10 bg-white" />
-    </div>
-  );
-};
+// const MobileNavigation = () => {
+//   return (
+//     <div className="m-4 grid h-10 justify-self-end">
+//       <div className="h-1 w-10 bg-white" />
+//       <div className="h-1 w-10 bg-white" />
+//       <div className="h-1 w-10 bg-white" />
+//     </div>
+//   );
+// };
 export default NavigationBar;
